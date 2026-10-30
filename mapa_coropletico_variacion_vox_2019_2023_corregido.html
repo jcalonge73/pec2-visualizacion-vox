@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mapa coroplético corregido: variación provincial del voto de VOX</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; color: #222; background: #fff; }
+    header { padding: 14px 20px 8px; max-width: 1200px; margin: auto; }
+    h1 { font-size: 1.25rem; margin: 0 0 6px; }
+    p { margin: 0 0 8px; line-height: 1.45; font-size: 0.94rem; }
+    .nota { color: #555; }
+    iframe { display: block; width: 100%; height: calc(100vh - 100px); min-height: 620px; border: 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Variación del porcentaje de voto de VOX por provincia (2019-2023)</h1>
+    <p class="nota">Nota metodológica: Santa Cruz de Tenerife se muestra sin valor comparable porque VOX no presentó candidatura al Congreso en esa provincia en julio de 2023. La ausencia de candidatura no se interpreta como un 0 % de voto.</p>
+  </header>
+  <iframe id="mapa" title="Mapa interactivo de la variación provincial del voto de VOX" src="mapa_coropletico_variacion_vox_2019_2023_con_canarias.html"></iframe>
+  <script>
+    (function () {
+      const frame = document.getElementById('mapa');
+      frame.addEventListener('load', function () {
+        let attempts = 0;
+        const timer = setInterval(function () {
+          attempts += 1;
+          try {
+            const w = frame.contentWindow;
+            const gd = w.document.querySelector('.plotly-graph-div');
+            if (w.Plotly && gd && gd.data && gd.data.length > 1) {
+              w.Plotly.restyle(gd, {
+                z: [[1.279768, null]],
+                customdata: [[[13.331529, 14.611297], [11.538702, null]]]
+              }, [1]);
+              w.Plotly.relayout(gd, {
+                'title.text': 'Cambio del porcentaje de voto de VOX por provincia (2019-2023)<br><sup>Santa Cruz de Tenerife: sin dato comparable. Canarias se muestra ampliada.</sup>'
+              });
+              clearInterval(timer);
+            } else if (attempts > 100) {
+              clearInterval(timer);
+            }
+          } catch (e) {
+            if (attempts > 100) clearInterval(timer);
+          }
+        }, 100);
+      });
+    }());
+  </script>
+</body>
+</html>
