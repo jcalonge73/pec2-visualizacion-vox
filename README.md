@@ -6,7 +6,7 @@ Trabajo académico sobre la evolución del voto de VOX en España y la comparaci
 
 La portada del proyecto está en [index.html](index.html). Para que los enlaces funcionen, añade en la raíz del repositorio los tres archivos HTML interactivos con estos nombres exactos:
 
-- `mapa_coropletico_variacion_vox_2019_2023_con_canarias.html`
+- `mapa_coropletico_variacion_vox_2019_2023_corregido.html`
 - `radar_perfil_partidos_ches_espana_2024_colores_partidos.html`
 - `violin_vox_municipios_2019_2023.html`
 
