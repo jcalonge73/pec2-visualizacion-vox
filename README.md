@@ -10,11 +10,13 @@ La portada del proyecto está en [index.html](index.html). Para que los enlaces 
 - `radar_perfil_partidos_ches_espana_2024_colores_partidos.html`
 - `violin_vox_municipios_2019_2023.html`
 
+El mapa publicado utiliza una generalización geométrica ligera para reducir el peso de descarga y mejorar la carga en navegador. Esta operación afecta al detalle de los contornos, no a los valores estadísticos representados.
+
 Los gráficos interactivos utilizan Plotly y requieren conexión a Internet para cargar la biblioteca cuando corresponda.
 
 ## Publicación con GitHub Pages
 
-Cuando estén los cuatro archivos en la raíz, abre **Settings → Pages**, elige **Deploy from a branch**, selecciona la rama `main` y la carpeta `/(root)`, y guarda. La URL pública del sitio aparecerá en esa misma sección.
+Cuando estén los cuatro archivos HTML en la raíz, abre **Settings → Pages**, elige **Deploy from a branch**, selecciona la rama `main` y la carpeta `/(root)`, y guarda. La URL pública del sitio aparecerá en esa misma sección.
 
 ## Enfoque y fuentes
 
